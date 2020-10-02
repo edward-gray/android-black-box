@@ -45,5 +45,9 @@
         android:id="@+id/playFragment"
         android:name="pro.edvard.blackbox.ui.play.PlayFragment"
         android:label="fragment_play"
-        tools:layout="@layout/fragment_play" />
+        tools:layout="@layout/fragment_play" >
+        <action
+            android:id="@+id/action_playFragment_to_gameMenuFragment"
+            app:destination="@id/gameMenuFragment" />
+    </fragment>
 </navigation>
