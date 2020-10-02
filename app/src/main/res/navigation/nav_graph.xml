@@ -48,6 +48,8 @@
         tools:layout="@layout/fragment_play" >
         <action
             android:id="@+id/action_playFragment_to_gameMenuFragment"
-            app:destination="@id/gameMenuFragment" />
+            app:destination="@id/gameMenuFragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/playFragment"/>
     </fragment>
 </navigation>

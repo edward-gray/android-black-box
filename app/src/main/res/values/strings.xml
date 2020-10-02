@@ -3,8 +3,8 @@
     <string name="developer">by Edvard Grei</string>
 
 
-    <string name="menu_internet_off">Oh, Nooooo!\nNo Internet Connection</string>
-    <string name="menu_internet_on">YES!\nInternet is Back Now</string>
+    <string name="menu_internet_off">Oh, Nooooo!\nNo Network Connection</string>
+    <string name="menu_internet_on">YES!\nNetwork is Available Now</string>
 
     <string name="button_play_with_me">Play with me</string>
     <string name="button_go_back">Go Back</string>

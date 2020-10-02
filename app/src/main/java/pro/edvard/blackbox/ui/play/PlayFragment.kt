@@ -69,7 +69,8 @@ class PlayFragment : Fragment(R.layout.fragment_play) {
         viewModel.isLastLevel.observe(viewLifecycleOwner) {
             if (it) {
                 presenter.handleFinishedAllLevelsUI()
-                pref.edit().putInt(K.CURRENT_LEVEL_KEY, 1).apply()
+                // saving
+                pref.edit().putInt(K.CURRENT_LEVEL_KEY, 0).apply()
             }
             buttonConfig(it)
         }
@@ -100,7 +101,7 @@ class PlayFragment : Fragment(R.layout.fragment_play) {
             if (levelNumber != -1) {
                 viewModel.getCurrentLevel(levelNumber)
             } else {
-                viewModel.getCurrentLevel(1)
+                viewModel.getCurrentLevel(0)
             }
         }
     }
@@ -114,7 +115,7 @@ class PlayFragment : Fragment(R.layout.fragment_play) {
                         // answer is correct
                         presenter.handleCorrectAnswerUI()
                         // saving level
-                        pref.edit().putInt(K.CURRENT_LEVEL_KEY, currentLevel.number).apply()
+                        pref.edit().putInt(K.CURRENT_LEVEL_KEY, currentLevel.number-1).apply()
                     } else {
                         // wrong answer
                         presenter.handleIncorrectAnswerUI()

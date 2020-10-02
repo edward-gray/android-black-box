@@ -30,7 +30,9 @@ constructor(
     }
 
     fun getCurrentLevel(levelNumber: Int) {
-        _currentLevel.value = _levels.value!![levelNumber-1]
+        if (levelNumber != _levels.value!!.size) {
+            _currentLevel.value = _levels.value!![levelNumber]
+        }
     }
 
     fun goToNextLevel() {

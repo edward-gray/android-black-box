@@ -14,7 +14,7 @@
         android:fontFamily="@font/fredoka_one_regular"
         android:text="@string/menu_internet_off"
         android:textAlignment="center"
-        android:textColor="@color/brandBlueDark"
+        android:textColor="@color/brandBlueLight"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
