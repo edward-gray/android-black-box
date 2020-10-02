@@ -37,5 +37,13 @@
             app:destination="@id/webViewFragment"
             app:popUpToInclusive="true"
             app:popUpTo="@id/gameMenuFragment"/>
+        <action
+            android:id="@+id/action_gameMenuFragment_to_playFragment"
+            app:destination="@id/playFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/playFragment"
+        android:name="pro.edvard.blackbox.ui.play.PlayFragment"
+        android:label="fragment_play"
+        tools:layout="@layout/fragment_play" />
 </navigation>

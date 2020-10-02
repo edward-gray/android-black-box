@@ -1,7 +1,14 @@
 <resources>
     <string name="app_name">Black Box</string>
     <string name="developer">by Edvard Grei</string>
+
+
+    <string name="menu_internet_off">Oh, Nooooo!\nNo Internet Connection</string>
+    <string name="menu_internet_on">YES!\nInternet is Back Now</string>
+    <string name="button_play_with_me">Play with me</string>
+    <string name="button_go_back">Go Back</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="play_answer_hint">\?</string>
 
 </resources>

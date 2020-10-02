@@ -3,4 +3,8 @@
     <color name="colorPrimary">#000000</color>
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#03DAC5</color>
+
+    <color name="brandBlueDark">#80c9fe</color>
+    <color name="brandBlueLight">#d5f5fb</color>
+
 </resources>

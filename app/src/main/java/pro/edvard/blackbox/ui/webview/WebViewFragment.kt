@@ -6,7 +6,6 @@ import android.view.View
 import android.webkit.CookieManager
 import android.webkit.WebViewClient
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import dagger.hilt.android.AndroidEntryPoint
@@ -17,7 +16,6 @@ import pro.edvard.blackbox.util.NetworkConnection
 @AndroidEntryPoint
 class WebViewFragment : Fragment(R.layout.fragment_web_view) {
 
-    private val viewModel: WebViewViewModel by viewModels()
     private lateinit var navController: NavController
     private lateinit var networkConnection: NetworkConnection
 
@@ -27,18 +25,24 @@ class WebViewFragment : Fragment(R.layout.fragment_web_view) {
         networkConnection = NetworkConnection(requireContext())
 
         handleWebViewSetting()
-        handleNetworkConnectionAndWebView(savedInstanceState)
+        handleNetworkConnection(savedInstanceState)
     }
 
-    private fun handleNetworkConnectionAndWebView(savedInstanceState: Bundle?) {
+    private fun handleNetworkConnection(savedInstanceState: Bundle?) {
         networkConnection.observe(viewLifecycleOwner) {networkAvailable ->
+
             if (networkAvailable != null) {
                 if (networkAvailable) {
-                    loadWebView(savedInstanceState)
+                    if (savedInstanceState == null) {
+                        loadWebView(savedInstanceState)
+                    }
                 } else {
                     navController.navigate(R.id.action_webViewFragment_to_gameMenuFragment)
                 }
+            } else {
+                navController.navigate(R.id.action_webViewFragment_to_gameMenuFragment)
             }
+
         }
     }
 
@@ -65,7 +69,6 @@ class WebViewFragment : Fragment(R.layout.fragment_web_view) {
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         web_webview.saveState(outState)
-        viewModel.setWebView(web_webview)
     }
 
     override fun onViewStateRestored(savedInstanceState: Bundle?) {
