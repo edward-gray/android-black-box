@@ -12,7 +12,7 @@
 
     <string name="play_answer_hint">\?</string>
     <string name="play_calculate_for_me">Calculate for me all the squares</string>
-    <string name="play_level">Level - </string>
+    <string name="play_level">Level</string>
     <string name="play_correct_answer">Perfect ;)</string>
     <string name="play_incorrect_answer">Incorrect</string>
     <string name="play_thank_you">thank you</string>

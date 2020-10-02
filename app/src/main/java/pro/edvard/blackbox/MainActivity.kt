@@ -1,6 +1,7 @@
 package pro.edvard.blackbox
 
 import android.os.Bundle
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -27,6 +28,9 @@ class MainActivity : AppCompatActivity() {
         // Internet access handled with this object
         networkConnection = NetworkConnection(this)
         handleNetworkConnection()
+
+        // hiding keyboard after input
+        this.window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN)
     }
 
     private fun navigationSetup() {

@@ -27,7 +27,7 @@ class SplashFragment : Fragment(R.layout.fragment_splash) {
     private fun start() {
         Handler().postDelayed({
             navController.navigate(R.id.action_splashFragment_to_webViewFragment)
-        }, 5000)
+        }, 2000)
     }
 
     private fun handleGif() {
