@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.webkit.CookieManager
 import android.webkit.WebViewClient
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -26,6 +27,7 @@ class WebViewFragment : Fragment(R.layout.fragment_web_view) {
 
         handleWebViewSetting()
         handleNetworkConnection(savedInstanceState)
+        handleOnBackPressed()
     }
 
     private fun handleNetworkConnection(savedInstanceState: Bundle?) {
@@ -74,6 +76,22 @@ class WebViewFragment : Fragment(R.layout.fragment_web_view) {
     override fun onViewStateRestored(savedInstanceState: Bundle?) {
         super.onViewStateRestored(savedInstanceState)
         web_webview.restoreState(savedInstanceState)
+    }
+
+    private fun handleOnBackPressed() {
+        val backPressedCallback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                if (web_webview.canGoBack()) {
+                    web_webview.goBack()
+                } else {
+                    navController.navigateUp()
+                }
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(
+            viewLifecycleOwner,
+            backPressedCallback
+        )
     }
 
 }
